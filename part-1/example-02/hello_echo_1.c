@@ -22,6 +22,12 @@ int main (int argc, char *argv[]) {
 			(format specifiers)		
 			las expresiones como "\t" o "\n" se conocen comos ecuencias de escape
 	
+			las expresiones como:
+			int i =1;
+			int argc;
+char *argv[];
+son declaraciones de variables
+[modificador] <tipo> <nombre_de_var>
 	*/
 	for(int i = 1; i<argc; i++){
 	printf("%i\t", i); //i for int
