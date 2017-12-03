@@ -20,9 +20,9 @@ int main(void){
 	complexi x;
 	x = addComplex(z,w);
 
-	printf("z=%i + %ii", z.re,z.im);
-	printf("w=%i + %ii", w.re,w.im);
-	printf("x=%i + %ii", x.re,x.im);
+	printf("z=%i + %ii \n", z.re,z.im);
+	printf("w=%i + %ii \n", w.re,w.im);
+	printf("x=%i + %ii \n", x.re,x.im);
 
 
 	return EXIT_SUCCESS;
