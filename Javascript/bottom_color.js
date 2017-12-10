@@ -1,16 +1,18 @@
 #!/usr/bin/gjs
 
-const Gdk = imports.gi.Gdk;
-const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 const Lang = imports.lang;
 
-const ColorbuttonExample = new Lang.Class ({
-    Name: 'Colorbutton Example',
+Gtk.init(null);
 
+const LanguageWindow = Lang.Class ({
+    Name: 'Language Window Example',
+    Extends: Gtk.Window,
     // Create the application itself
     _init: function () {
-        this.application = new Gtk.Application ({ application_id: 'org.example.jscolorbutton' });
+        this.parent({title: "Language Selector" });
+	this.border_width:10;
+
 
         // Connect 'activate' and 'startup' signals to the callback functions
         this.application.connect('activate', Lang.bind(this, this._onActivate));
