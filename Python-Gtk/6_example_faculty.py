@@ -25,10 +25,9 @@ class ListBoxWindow(Gtk.Window):
         hbox.pack_start(label, True, True, 0)
         hbox.pack_start(entry, False, True, 0)
         listbox.add(row)
-       
+
         row = Gtk.ListBoxRow()
         hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=50)
-
         row.add(hbox)
         label = Gtk.Label("Facultad", xalign=0)
         combo = Gtk.ComboBoxText()
@@ -37,10 +36,19 @@ class ListBoxWindow(Gtk.Window):
         combo.insert(0, "2", "Facultas de Ciencias Biologicas")
         combo.insert(1, "3", "Facultad de Ciencias Fisicas")
         hbox.pack_start(label, True, True, 0)
-        hbox.pack_start(combo, False, True, 0) 
+        hbox.pack_start(combo, True, True, 0) 
         listbox.add(row)
 
-        
+        button = Gtk.Button("Enviar")
+        button.connect("clicked", self.on_clicked_me, entry)
+        box_outer.add(button)
+
+        final_label = Gtk.Label("Message")
+        box_outer.add(final_label)
+
+    def on_clicked_me(button, entry,label):
+        text = entry.get_text()
+        print(text)
 
 win = ListBoxWindow()
 win.connect("delete-event", Gtk.main_quit)
