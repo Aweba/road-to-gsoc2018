@@ -42,13 +42,15 @@ class ListBoxWindow(Gtk.Window):
         button = Gtk.Button("Enviar")
         final_label = Gtk.Label("Message")
 
-        button.connect("clicked", self.on_clicked_me,entry, final_label)
+        button.connect("clicked", self.on_clicked_me,entry, final_label, combo)
         box_outer.add(button)
         box_outer.add(final_label)
 
-    def on_clicked_me(entry, entr, entryme, label):
+    def on_clicked_me(entry, entr, entryme, label,combo):
         text = entryme.get_text()
-        label.set_text(text)
+        text2 = combo.get_active_text()
+        text3 = text + " de la " + text2
+        label.set_text(text3)
 
 win = ListBoxWindow()
 win.connect("delete-event", Gtk.main_quit)
